@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Mini-Games</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- Mini-Game 1: Word Scramble -->
+<div class="container" id="game1">
+  <h1>Mini-Game 1</h1>
+  <p>Enter the password:</p>
+  <input id="answer1" placeholder="Your answer..."/>
+  <div class="game1-button-container">
+    <button onclick="solveScramble()">Check</button>
+    <button onclick="showHint()">Hint</button>
+  </div>
+  <p id="msg1"></p>
+  <p><i id="game1-hint"></i></p>
+  <div class="hidden-word">HAPPINESS</div>
+</div>
+
+<!-- Mini-Game 2: Logic Puzzle -->
+<div class="container" id="game2">
+  <h1>Mini-Game 2</h1>
+  <p>All boxes are incorrectly labeled. Click the box that actually contains the gold.</p>
+  <div class="box-area">
+    <div class="box" id="box1" role="button" onclick="handleClick(this.id)">
+      <p>Box 1</p>
+    </div>
+    <div class="box" id="box2" role="button" onclick="handleClick(this.id)">
+      <p>Box 2</p>
+    </div>
+    <div class="box" id="box3" role="button" onclick="handleClick(this.id)">
+      <p>Box 3</p>
+    </div>
+  </div>
+  <div class="box-area">
+    <div class="box" id="box4" role="button" onclick="handleClick(this.id)">
+      <p>Box 4</p>
+    </div>
+    <div class="box" id="box5" role="button" onclick="handleClick(this.id)">
+      <p>Box 5</p>
+    </div>
+    <div class="box" id="box6" role="button" onclick="handleClick(this.id)">
+      <p>Box 6</p>
+    </div>
+  </div>
+  <p id="msg2"></p>
+</div>
+
+<!-- Mini-Game 3: Memory Game -->
+<div class="container" id="game3">
+  <h1>Mini-Game 3</h1>
+  <p>Memorize this color sequence:</p>
+  <div id="color-sequence" style="margin: 10px 0; font-size: 24px;"></div>
+  <input id="answer3" placeholder="Enter sequence (e.g., RGBYP)..."/>
+  <button onclick="solveMemory()">Check</button>
+  <p id="msg3"></p>
+</div>
+
+<!-- Final Screen -->
+<div class="container" id="final">
+  <h1>🎉 Happy Birthday! 🎉</h1>
+  <p>Wishing you all the best on your special day! 🎂</p>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

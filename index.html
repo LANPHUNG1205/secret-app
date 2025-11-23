@@ -10,62 +10,79 @@
 
 <!-- Mini-Game 1: Word Scramble -->
 <div class="container" id="game1">
-  <h1>Mini-Game 1</h1>
-  <p>Enter the password:</p>
-  <input id="answer1" placeholder="Your answer..."/>
-  <div class="game1-button-container">
-    <button onclick="solveScramble()">Check</button>
-    <button onclick="showHint()">Hint</button>
+  <h1 class="text-center">Mini-Game 1</h1>
+  <p class="text-center">Enter the password</p>
+  <div class="flex-row">
+    <input id="game1-answer-field" placeholder="Password..."/>
+    <button id="game1-check-button" onclick="checkPassword()">Check</button>
   </div>
-  <p id="msg1"></p>
-  <p><i id="game1-hint"></i></p>
-  <div class="hidden-word">HAPPINESS</div>
+  <div class="hint-button">
+    <button onclick="showHintGame1()">Toggle hint</button>
+  </div>
+  <div class="hidden-word no-select"></div>
 </div>
 
 <!-- Mini-Game 2: Logic Puzzle -->
 <div class="container" id="game2">
-  <h1>Mini-Game 2</h1>
-  <p>All boxes are incorrectly labeled. Click the box that actually contains the gold.</p>
+  <h1 class="text-center">Mini-Game 2</h1>
+  <p class="text-center">Choose a size (only <strong>one</strong> is correct)</p>
   <div class="box-area">
-    <div class="box" id="box1" role="button" onclick="handleClick(this.id)">
-      <p>Box 1</p>
+    <div class="box" id="3" role="button" onclick="chooseBox(this.id)">
+      <p>3</p>
     </div>
-    <div class="box" id="box2" role="button" onclick="handleClick(this.id)">
-      <p>Box 2</p>
+    <div class="box" id="8" role="button" onclick="chooseBox(this.id)">
+      <p>8</p>
     </div>
-    <div class="box" id="box3" role="button" onclick="handleClick(this.id)">
-      <p>Box 3</p>
+    <div class="box" id="1" role="button" onclick="chooseBox(this.id)">
+      <p>1</p>
     </div>
   </div>
   <div class="box-area">
-    <div class="box" id="box4" role="button" onclick="handleClick(this.id)">
-      <p>Box 4</p>
+    <div class="box" id="9" role="button" onclick="chooseBox(this.id)">
+      <p>9</p>
     </div>
-    <div class="box" id="box5" role="button" onclick="handleClick(this.id)">
-      <p>Box 5</p>
+    <div class="box" id="2" role="button" onclick="chooseBox(this.id)">
+      <p>2</p>
     </div>
-    <div class="box" id="box6" role="button" onclick="handleClick(this.id)">
-      <p>Box 6</p>
+    <div class="box" id="6" role="button" onclick="chooseBox(this.id)">
+      <p>6</p>
     </div>
   </div>
-  <p id="msg2"></p>
+  <div class="box-area">
+    <div class="box" id="5" role="button" onclick="chooseBox(this.id)">
+      <p>5</p>
+    </div>
+    <div class="box" id="4" role="button" onclick="chooseBox(this.id)">
+      <p>4</p>
+    </div>
+    <div class="box" id="7" role="button" onclick="chooseBox(this.id)">
+      <p>7</p>
+    </div>
+  </div>
+  <div class="hint-buttonr">
+    <button onclick="showHintGame2()">Toggle hint</button>
+  </div>
 </div>
 
 <!-- Mini-Game 3: Memory Game -->
 <div class="container" id="game3">
-  <h1>Mini-Game 3</h1>
-  <p>Memorize this color sequence:</p>
-  <div id="color-sequence" style="margin: 10px 0; font-size: 24px;"></div>
-  <input id="answer3" placeholder="Enter sequence (e.g., RGBYP)..."/>
-  <button onclick="solveMemory()">Check</button>
-  <p id="msg3"></p>
+  <h1 class="text-center">Mini-Game 3</h1>
+  <p class="text-center">Solve this math operation in: <span id="timer"></span></p>
+  <p class="text-center" id="game3-operation"></p>
+  <div class="flex-row">
+    <input id="game3-answer-field" placeholder="Solution..."/>
+    <button id="game3-check-button" onclick="solveMath()">Check</button>
+  </div>
 </div>
 
 <!-- Final Screen -->
 <div class="container" id="final">
-  <h1>🎉 Happy Birthday! 🎉</h1>
-  <p>Wishing you all the best on your special day! 🎂</p>
+  <h1 class="text-center">🎉 Happy Birthday! 🎉</h1>
+  <p class="text-center">Wishing you all the best on your special day! 🎂</p>
 </div>
+
+<div id="game1-hint" class="hint-container hidden"><i>💭 Find somewhere out of the box...</i></div>
+<div id="game2-hint" class="hint-container hidden"><i>💭 Think about your previous password</i></div>
 
 <script type="module" src="main.js"></script>
 </body>

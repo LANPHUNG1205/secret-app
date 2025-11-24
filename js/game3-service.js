@@ -29,7 +29,7 @@ export function startMathGame() {
   document.getElementById("game3-operation").textContent =
       `${nums[0]} ${ops[0]} ${nums[1]} ${ops[1]} ${nums[2]} ${ops[2]} ${nums[3]}`;
 
-  startTimer(30);
+  startTimer(45);
 }
 
 function solveMath() {

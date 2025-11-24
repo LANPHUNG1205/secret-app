@@ -22,9 +22,9 @@ async function loadRandomWord() {
   el.textContent = hiddenWord.toUpperCase();
 
   const pos = [
-    { x: 15, y: 20 },
-    { x: 15, y: 80 },
-    { x: 10, y: 50 },
+    { x: 8, y: 20 },
+    { x: 10, y: 80 },
+    { x: 8, y: 50 },
     { x: 70, y: 20 },
     { x: 70, y: 85 },
   ];
@@ -53,5 +53,5 @@ function checkPassword() {
 }
 
 function toggleHint() {
-  showNotification(NotificationType.HINT, 'Find somewhere out of the box 🔍');
+  showNotification(NotificationType.HINT, 'Navigate somewhere out of the box 🔍');
 }

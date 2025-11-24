@@ -113,7 +113,7 @@ input {
 .hidden-word {
   position: absolute;
   color: transparent;
-  font-size: 35px;
+  font-size: 50px;
   font-weight: bold;
   background-image: linear-gradient(90deg, transparent, transparent);
   transition: color 0.3s;

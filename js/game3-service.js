@@ -1,5 +1,7 @@
 import { show, hide, randomNumber, randomOperator, calculate } from "./utils.js";
 import { game3, finalScreen } from "./main.js";
+import {showNotification} from "./notification-service.js";
+import {NotificationType} from "./model/notification-type.js";
 
 let intervalId = null;
 let correctAnswer = null;
@@ -32,7 +34,7 @@ export function startMathGame() {
 
 function solveMath() {
   const input = document.getElementById("game3-answer-field");
-  const user = parseInt(input.value);
+  const user = parseInt(input.value.trim().replace(/[.,]/g, ''));
 
   if (user === correctAnswer) {
     stopTimer();
@@ -56,7 +58,10 @@ function startTimer(count) {
 
     if (count < 0) {
       clearInterval(intervalId);
-      location.reload();
+      showNotification(NotificationType.ERROR, 'Time out! You must start again from the beginning 😹');
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     }
   }, 1000);
 }

@@ -1,7 +1,7 @@
 import { show } from "./utils.js";
-import { initGame1 } from "./game1.js";
-import { initGame2 } from "./game2.js";
-import { initGame3 } from "./game3.js";
+import { initGame1 } from "./game1-service.js";
+import { initGame2 } from "./game2-service.js";
+import { initGame3 } from "./game3-service.js";
 
 export const game1 = document.getElementById("game1");
 export const game2 = document.getElementById("game2");

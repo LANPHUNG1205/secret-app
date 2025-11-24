@@ -45,7 +45,7 @@ export function showNotification(type, message) {
                 ${getIcon(type)}
                 <div class="notification-content">
                     <div class="notification-heading">${type.toString()}</div>
-                    <div class="notification-message"><i>${message}</i></div>
+                    <div class="notification-message">${message}</div>
                 </div>
                 <button class="close-btn" aria-label="Close">
                     <svg 

@@ -22,10 +22,11 @@ async function loadRandomWord() {
   el.textContent = hiddenWord.toUpperCase();
 
   const pos = [
-    { x: -50, y: -50 },
-    { x: -50, y: 150 },
-    { x: 100, y: -50 },
-    { x: 100, y: 150 },
+    { x: 15, y: 20 },
+    { x: 15, y: 80 },
+    { x: 10, y: 50 },
+    { x: 70, y: 20 },
+    { x: 70, y: 85 },
   ];
 
   const p = pos[Math.floor(Math.random() * pos.length)];
@@ -39,9 +40,10 @@ function checkPassword() {
   const answer = input.value.toLowerCase();
 
   if (answer === hiddenWord) {
-    showNotification(NotificationType.SUCCESS, 'You are top, bro! 😎');
+    showNotification(NotificationType.SUCCESS, 'Logged in successfully! 😎');
     hide(game1);
     show(game2);
+    document.getElementById("hidden-word").style.display = "none";
   } else {
     input.classList.remove("shake");
     void input.offsetWidth;
@@ -51,5 +53,5 @@ function checkPassword() {
 }
 
 function toggleHint() {
-  showNotification(NotificationType.HINT, 'Find somewhere out of the box 💭');
+  showNotification(NotificationType.HINT, 'Find somewhere out of the box 🔍');
 }

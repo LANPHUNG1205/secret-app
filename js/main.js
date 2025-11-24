@@ -2,10 +2,12 @@ import { show } from "./utils/utils.js";
 import { initGame1 } from "./game1-service.js";
 import { initGame2 } from "./game2-service.js";
 import { initGame3 } from "./game3-service.js";
+import {initGame4} from "./game4-service.js";
 
 export const game1 = document.getElementById("game1");
 export const game2 = document.getElementById("game2");
 export const game3 = document.getElementById("game3");
+export const game4 = document.getElementById("game4");
 export const finalScreen = document.getElementById("final");
 
 // show first game
@@ -15,3 +17,4 @@ show(game1);
 initGame1();
 initGame2();
 initGame3();
+initGame4();

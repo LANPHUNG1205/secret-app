@@ -1,10 +1,10 @@
 import { show, hide, randomNumber, randomOperator, calculate } from "./utils/utils.js";
-import { game3, finalScreen } from "./main.js";
+import {game3, game4} from "./main.js";
 import {showNotification} from "./notification-service.js";
 import {NotificationType} from "./model/notification-type.js";
 
 let intervalId = null;
-let correctAnswer = null;
+export let correctAnswer = null;
 
 export function initGame3() {
   window.solveMath = solveMath;
@@ -37,10 +37,10 @@ function solveMath() {
   const user = parseInt(input.value.trim().replace(/[.,]/g, ''));
 
   if (user === correctAnswer) {
+    showNotification(NotificationType.SUCCESS, 'You are almost there! 🙌');
     stopTimer();
     hide(game3);
-    show(finalScreen);
-    startConfetti();
+    show(game4);
   } else {
     input.classList.remove("shake");
     void input.offsetWidth;
@@ -58,7 +58,7 @@ function startTimer(count) {
 
     if (count < 0) {
       clearInterval(intervalId);
-      showNotification(NotificationType.ERROR, 'Time out! You must start again from the beginning 😹');
+      showNotification(NotificationType.ERROR, 'Time out! You must start again from the beginning ⏰');
       setTimeout(() => {
         location.reload();
       }, 2000);
@@ -69,22 +69,4 @@ function startTimer(count) {
 function stopTimer() {
   clearInterval(intervalId);
   intervalId = null;
-}
-
-function startConfetti() {
-  const colors = ["#FFC107", "#FF5722", "#4CAF50", "#2196F3", "#E91E63"];
-
-  for (let i = 0; i < 500; i++) {
-    const div = document.createElement("div");
-    div.classList.add("confetti");
-    div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    div.style.left = Math.random() * window.innerWidth + "px";
-    div.style.width = Math.random() * 8 + 4 + "px";
-    div.style.height = Math.random() * 8 + 4 + "px";
-    div.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
-    div.style.animationDelay = Math.random() * 3 + "s";
-
-    document.body.appendChild(div);
-    div.addEventListener("animationend", () => div.remove());
-  }
 }

@@ -12,11 +12,11 @@
 <div class="container" id="game1">
   <h1 class="text-center">The 'login'</h1>
   <p class="text-center">Enter the password</p>
-  <div class="flex-row">
-    <input id="game1-answer-field" placeholder="Password..."/>
+  <div class="flex-row-space-between">
+    <input id="game1-answer-field" class="flex-grow" placeholder="Password..."/>
     <button class="standard-button" id="game1-check-button" onclick="checkPassword()">Check</button>
   </div>
-  <div class="hint-button">
+  <div class="hint-button-container">
     <button class="standard-button" onclick="showHintGame1()">Show hint</button>
   </div>
 </div>
@@ -24,7 +24,7 @@
 <!-- Mini-Game 2: Logic Puzzle -->
 <div class="container" id="game2">
   <h1 class="text-center">The mystery number</h1>
-  <p class="text-center">Choose a number (only <span id="mystery-word">one number</span> is correct)</p>
+  <p class="text-center">Choose a number (only <span id="mystery-word">one number</span> is correct!)</p>
   <div class="box-area">
     <div class="box" id="19" role="button" onclick="chooseBox(this.id)">
       <p>19</p>
@@ -58,7 +58,7 @@
       <p>5</p>
     </div>
   </div>
-  <div class="hint-button">
+  <div class="hint-button-container">
     <button class="standard-button" onclick="showFirstHintGame2()">Show first hint</button>
     <button class="standard-button" onclick="showSecondHintGame2()">Show second hint</button>
   </div>
@@ -69,8 +69,8 @@
   <h1 class="text-center">Math-Sensei</h1>
   <p class="text-center">Solve this math operation in: <span id="timer"></span></p>
   <p class="text-center"><strong id="game3-operation"></strong></p>
-  <div class="flex-row">
-    <input id="game3-answer-field" placeholder="Solution..."/>
+  <div class="flex-row-space-between">
+    <input id="game3-answer-field" class="flex-grow" placeholder="Solution..."/>
     <button class="standard-button" id="game3-check-button" onclick="solveMath()">Check</button>
   </div>
 </div>

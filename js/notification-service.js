@@ -47,7 +47,7 @@ export function showNotification(type, message) {
                     <div class="notification-heading">${type.toString()}</div>
                     <div class="notification-message">${message}</div>
                 </div>
-                <button class="close-btn" aria-label="Close">
+                <button class="close-button" aria-label="Close">
                     <svg 
                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
@@ -65,7 +65,7 @@ export function showNotification(type, message) {
     });
   };
 
-  const closeButton = notification.querySelector('.close-btn');
+  const closeButton = notification.querySelector('.close-button');
   closeButton.onclick = dismissNotification;
 
   // 4. Append to container (LIFO: Last In, First Out)

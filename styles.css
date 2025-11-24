@@ -1,4 +1,6 @@
 :root {
+  /* Main colors */
+  --bright-orange: #ff7b54;
   /* Info Colors */
   --info-bg: #e0f2ff;
   --info-border: #a3d9ff;
@@ -14,7 +16,6 @@
   --error-border: #ffb0b0;
   --error-text: #c0392b;
 
-  --base-font: 'Inter', sans-serif;
   --dark-text: #333;
 }
 
@@ -24,6 +25,15 @@ body {
   background: linear-gradient(135deg, #ffecd2, #fcb69f);
   height: 100vh;
   overflow: hidden;
+}
+
+h1 { color: var(--bright-orange); }
+
+input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
 .container {
@@ -45,10 +55,19 @@ body {
   text-align: center;
 }
 
-h1 { color: #ff7b54; }
+.flex-row-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
 
 .standard-button {
-  background: #ff7b54;
+  background: var(--bright-orange);
   color: white;
   border: none;
   border-radius: 10px;
@@ -58,31 +77,29 @@ h1 { color: #ff7b54; }
 }
 .standard-button:hover { background: #ff6338; }
 
-input {
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+.hint-button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
 }
 
-.flex-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0;
+  color: #9ca3af;
+  transition: color 0.15s ease-in-out;
+}
+.close-button:hover {
+  color: #4b5563;
 }
 
 .shake {
   animation: shake 0.3s ease;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-4px); }
-  40% { transform: translateX(4px); }
-  60% { transform: translateX(-4px); }
-  80% { transform: translateX(4px); }
-  100% { transform: translateX(0); }
 }
 
 .no-select {
@@ -100,6 +117,7 @@ input {
   font-weight: bold;
   background-image: linear-gradient(90deg, transparent, transparent);
   transition: color 0.3s;
+  padding: 50px;
 }
 
 .hidden-word:hover {
@@ -122,18 +140,16 @@ input {
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border: 2px solid #ff7b54;
+  border: 2px solid var(--bright-orange);
   text-align: center;
 }
 
-/* Hover effect */
 .box:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   background: #fafafa;
 }
 
-/* Click (active) effect */
 .box:active {
   transform: translateY(0px) scale(0.97);
   box-shadow: 0 1px 6px rgba(0,0,0,0.12);
@@ -156,12 +172,19 @@ input {
   border: 2px solid #F0D909;
 }
 
-.hint-button {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-  align-items: center;
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  opacity: 0.9;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.game4-color-info {
+  font-size: 12px;
+  margin-top: 30px;
 }
 
 #notification-container {
@@ -206,7 +229,6 @@ input {
   border-color: var(--error-border);
 }
 
-/* Icon Container Styles */
 .icon-container {
   height: 2rem;
   width: 2rem;
@@ -217,23 +239,20 @@ input {
   justify-content: center;
 }
 
-/* Type-specific icon colors */
 .notification.hint .icon-container { background-color: var(--info-border); }
 .notification.success .icon-container { background-color: var(--success-border); }
 .notification.oops .icon-container { background-color: var(--error-border); }
 
-/* Icon SVG Stroke Colors */
 .notification.hint .icon-container svg { stroke: var(--info-text); }
 .notification.success .icon-container svg { stroke: var(--success-text); }
 .notification.oops .icon-container svg { stroke: var(--error-text); }
 
-/* Content Styling */
 .notification-content {
   flex-grow: 1;
 }
 .notification-heading {
   font-weight: 600;
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.875rem;
   line-height: 1.25rem;
   text-transform: capitalize;
 }
@@ -242,48 +261,21 @@ input {
 .notification.oops .notification-heading { color: var(--error-text); }
 
 .notification-message {
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.875rem;
   color: var(--dark-text);
   margin-top: 2px;
 }
 
-#game1-answer-field {
-  flex-grow: 1;
-}
-
-#game3-answer-field {
-  flex-grow: 1;
-}
-
-.confetti {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: red;
-  opacity: 0.9;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-top: 0;
-  color: #9ca3af;
-  transition: color 0.15s ease-in-out;
-}
-.close-btn:hover {
-  color: #4b5563;
-}
-
-.game4-color-info {
-  font-size: 12px;
-  margin-top: 30px;
-}
-
 /* --- ANIMATIONS --- */
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
 
 @keyframes fall {
   0% {

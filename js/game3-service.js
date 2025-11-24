@@ -34,7 +34,7 @@ export function startMathGame() {
 
 function solveMath() {
   const input = document.getElementById("game3-answer-field");
-  const user = parseInt(input.value.trim().replace(/[.,]/g, ''));
+  const user = parseInt(input.value.trim().replace(/[.,\s]/g, ''));
 
   if (user === correctAnswer) {
     showNotification(NotificationType.SUCCESS, 'You are almost there! 🙌');
@@ -58,6 +58,7 @@ function startTimer(count) {
 
     if (count < 0) {
       clearInterval(intervalId);
+      document.getElementById("game3-check-button").disabled = true;
       showNotification(NotificationType.ERROR, 'Time out! You must start again from the beginning ⏰');
       setTimeout(() => {
         location.reload();

@@ -10,21 +10,21 @@
 
 <!-- Mini-Game 1: Word Scramble -->
 <div class="container" id="game1">
-  <h1 class="text-center">Mini-Game 1</h1>
+  <h1 class="text-center">The entry</h1>
   <p class="text-center">Enter the password</p>
   <div class="flex-row">
     <input id="game1-answer-field" placeholder="Password..."/>
-    <button id="game1-check-button" onclick="checkPassword()">Check</button>
+    <button class="standard-button" id="game1-check-button" onclick="checkPassword()">Check</button>
   </div>
   <div class="hint-button">
-    <button onclick="showHintGame1()">Toggle hint</button>
+    <button class="standard-button" onclick="showHintGame1()">Show hint</button>
   </div>
   <div class="hidden-word no-select"></div>
 </div>
 
 <!-- Mini-Game 2: Logic Puzzle -->
 <div class="container" id="game2">
-  <h1 class="text-center">Mini-Game 2</h1>
+  <h1 class="text-center">The mystery number</h1>
   <p class="text-center">Choose a size (only <strong>one</strong> is correct)</p>
   <div class="box-area">
     <div class="box" id="3" role="button" onclick="chooseBox(this.id)">
@@ -60,29 +60,31 @@
     </div>
   </div>
   <div class="hint-button">
-    <button onclick="showHintGame2()">Toggle hint</button>
+    <button class="standard-button" onclick="showHintGame2()">Show hint</button>
   </div>
 </div>
 
 <!-- Mini-Game 3: Memory Game -->
 <div class="container" id="game3">
-  <h1 class="text-center">Mini-Game 3</h1>
+  <h1 class="text-center">Math-Sensei</h1>
   <p class="text-center">Solve this math operation in: <span id="timer"></span></p>
-  <p class="text-center" id="game3-operation"></p>
+  <p class="text-center"><strong id="game3-operation"></strong></p>
   <div class="flex-row">
     <input id="game3-answer-field" placeholder="Solution..."/>
-    <button id="game3-check-button" onclick="solveMath()">Check</button>
+    <button class="standard-button" id="game3-check-button" onclick="solveMath()">Check</button>
   </div>
 </div>
 
 <!-- Final Screen -->
 <div class="container" id="final">
-  <h1 class="text-center">🎉 Happy Birthday! 🎉</h1>
+  <h1 class="text-center">🎉 Congratulation & Happy Birthday! 🎉</h1>
   <p class="text-center">Wishing you all the best on your special day! 🎂</p>
+  <p class="text-center">And don't forget, you are always my best bro in the world! 🌞</p>
 </div>
 
-<div id="game1-hint" class="hint-container hidden"><i>💭 Find somewhere out of the box...</i></div>
-<div id="game2-hint" class="hint-container hidden"><i>💭 Think about your previous password</i></div>
+<div id="notification-container">
+  <!-- Notifications will be dynamically added here -->
+</div>
 
 <script type="module" src="js/main.js"></script>
 </body>

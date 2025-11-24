@@ -1,8 +1,9 @@
 import { show, hide } from "./utils.js";
 import { game1, game2 } from "./main.js";
+import { showNotification } from "./notification-service.js";
+import {NotificationType} from "./model/notification-type.js";
 
 export let hiddenWord = "";
-const hint = document.getElementById("game1-hint");
 
 export async function initGame1() {
   await loadRandomWord();
@@ -38,9 +39,9 @@ function checkPassword() {
   const answer = input.value.toLowerCase();
 
   if (answer === hiddenWord) {
+    showNotification(NotificationType.SUCCESS, 'You are top, bro! 😎');
     hide(game1);
     show(game2);
-    hint.classList.add("hidden");
   } else {
     input.classList.remove("shake");
     void input.offsetWidth;
@@ -50,5 +51,5 @@ function checkPassword() {
 }
 
 function toggleHint() {
-  hint.classList.toggle("hidden");
+  showNotification(NotificationType.HINT, 'Find somewhere out of the box 💭');
 }

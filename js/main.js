@@ -1,4 +1,4 @@
-import { show } from "./utils.js";
+import { show } from "./utils/utils.js";
 import { initGame1 } from "./game1-service.js";
 import { initGame2 } from "./game2-service.js";
 import { initGame3 } from "./game3-service.js";

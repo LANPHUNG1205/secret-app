@@ -1,4 +1,4 @@
-import { show, hide } from "./utils.js";
+import { show, hide } from "./utils/utils.js";
 import { hiddenWord } from "./game1-service.js";
 import { game2, game3 } from "./main.js";
 import { startMathGame } from "./game3-service.js";

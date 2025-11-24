@@ -1,4 +1,4 @@
-import { show, hide, randomNumber, randomOperator, calculate } from "./utils.js";
+import { show, hide, randomNumber, randomOperator, calculate } from "./utils/utils.js";
 import { game3, finalScreen } from "./main.js";
 import {showNotification} from "./notification-service.js";
 import {NotificationType} from "./model/notification-type.js";
@@ -53,7 +53,7 @@ function startTimer(count) {
   const timer = document.getElementById("timer");
 
   intervalId = setInterval(() => {
-    timer.textContent = count.toString();
+    timer.textContent = `${count.toString()}s`;
     count--;
 
     if (count < 0) {

@@ -1,4 +1,4 @@
-import { show, hide } from "./utils.js";
+import { show, hide } from "./utils/utils.js";
 import { game1, game2 } from "./main.js";
 import { showNotification } from "./notification-service.js";
 import {NotificationType} from "./model/notification-type.js";

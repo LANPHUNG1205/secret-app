@@ -12,13 +12,13 @@ After installing git successfully, you can check by open the Terminal and write 
 git --version
 ```
 
-If the terminal shows the current version of git, then you done!
+If the terminal shows the current version of git, then you're done!
 
 ## Node.js
 
 Node.js is required so that you can run the web app in browser (Google Chrome, Firefox...) by http server.
 
-Go the this website [Node.js](https://nodejs.org/en/download) and download the latest LTS version.
+Go the this website [Node.js](https://nodejs.org/en/download) and download the LTS (Long-Term Support) version.
 
 After installing git successfully, you can check by opening the Terminal and write the command to check the node and npm version:
 

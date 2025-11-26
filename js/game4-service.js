@@ -1,40 +1,46 @@
 import {finalScreen, game4} from "./main.js";
 import {hide, show} from "./utils/utils.js";
-import {hiddenWord} from "./game1-service.js";
-import {correctAnswer} from "./game3-service.js";
+import {solutionGame1} from "./game1-service.js";
+import {solutionGame3} from "./game3-service.js";
 import {showNotification} from "./notification-service.js";
 import {NotificationType} from "./model/notification-type.js";
+import {initFinal} from "./final-screen-service.js";
 
 export function initGame4() {
   window.chooseLifeOrDeathBox = chooseLifeOrDeathBox;
 }
 
+export let solutionGame4 = "";
+
 function chooseLifeOrDeathBox(id) {
-  let hiddenWordFromGame1 = hiddenWord;
-  let solutionFromGame3 = correctAnswer;
+  let hiddenWordFromGame1 = solutionGame1;
+  let solutionFromGame3 = solutionGame3;
 
   let correctBox;
 
   if (hiddenWordFromGame1.length % 2 === 0 && solutionFromGame3 % 2 === 0) {
-    correctBox = "red";
+    correctBox = "heart";
   } else if (hiddenWordFromGame1.length % 2 !== 0 && solutionFromGame3 % 2 === 0) {
-    correctBox = "green";
+    correctBox = "plant";
   } else if (hiddenWordFromGame1.length % 2 === 0 && solutionFromGame3 % 2 !== 0) {
-    correctBox = "blue";
+    correctBox = "music";
   } else {
-    correctBox = "yellow";
+    correctBox = "star";
   }
+
+  solutionGame4 = correctBox;
 
   if (id === correctBox) {
     showNotification(NotificationType.SUCCESS, 'Congratulation! 🏅');
     hide(game4);
     show(finalScreen);
+    initFinal();
     startConfetti();
   } else {
-    showNotification(NotificationType.ERROR, 'Wrong color! Back to the beginning! ↩️');
+    showNotification(NotificationType.ERROR, 'Wrong! Restarting... ↩️');
     setTimeout(() => {
       location.reload();
-    }, 3000);
+    }, 2500);
   }
 }
 

@@ -1,10 +1,10 @@
-import { show, hide, randomNumber, randomOperator, calculate } from "./utils/utils.js";
+import { show, hide, randomNumber } from "./utils/utils.js";
 import {game3, game4} from "./main.js";
 import {showNotification} from "./notification-service.js";
 import {NotificationType} from "./model/notification-type.js";
 
 let intervalId = null;
-export let correctAnswer = null;
+export let solutionGame3 = null;
 
 export function initGame3() {
   window.solveMath = solveMath;
@@ -18,13 +18,24 @@ export function startMathGame() {
     randomNumber(1000, 999999),
   ];
 
-  const ops = [randomOperator(), randomOperator(), randomOperator()];
+  let result = nums[0];
+  let ops = [];
 
-  let result = calculate(nums[0], nums[1], ops[0]);
-  result = calculate(result, nums[2], ops[1]);
-  result = calculate(result, nums[3], ops[2]);
+  for (let i = 1; i < nums.length; i++) {
+    const next = nums[i];
+    let op;
+    if (Math.random() < 0.5 && result > next) {
+      op = "-";
+      result -= next;
+    } else {
+      op = "+";
+      result += next;
+    }
 
-  correctAnswer = result;
+    ops.push(op);
+  }
+
+  solutionGame3 = result;
 
   document.getElementById("game3-operation").textContent =
       `${nums[0]} ${ops[0]} ${nums[1]} ${ops[1]} ${nums[2]} ${ops[2]} ${nums[3]}`;
@@ -36,7 +47,7 @@ function solveMath() {
   const input = document.getElementById("game3-answer-field");
   const user = parseInt(input.value.trim().replace(/[.,\s]/g, ''));
 
-  if (user === correctAnswer) {
+  if (user === solutionGame3) {
     showNotification(NotificationType.SUCCESS, 'You are almost there! 🙌');
     stopTimer();
     hide(game3);
@@ -59,10 +70,10 @@ function startTimer(count) {
     if (count < 0) {
       clearInterval(intervalId);
       document.getElementById("game3-check-button").disabled = true;
-      showNotification(NotificationType.ERROR, 'Time out! You must start again from the beginning ⏰');
+      showNotification(NotificationType.ERROR, 'Time out! ⏰ You will be logged out in seconds...');
       setTimeout(() => {
         location.reload();
-      }, 2000);
+      }, 2500);
     }
   }, 1000);
 }

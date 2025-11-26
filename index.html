@@ -80,34 +80,36 @@
   <h1 class="text-center">The fateful color</h1>
   <p class="text-center">Just chill and pick a color</p>
   <div class="box-area">
-    <div class="box border-red" id="red" role="button" onclick="chooseLifeOrDeathBox(this.id)">
-      <p>Red</p>
+    <div class="box border-red" id="heart" role="button" onclick="chooseLifeOrDeathBox(this.id)">
+      <p>❤️</p>
     </div>
-    <div class="box border-green" id="green" role="button" onclick="chooseLifeOrDeathBox(this.id)">
-      <p>Green</p>
+    <div class="box border-green" id="plant" role="button" onclick="chooseLifeOrDeathBox(this.id)">
+      <p>🌱</p>
     </div>
   </div>
   <div class="box-area">
-    <div class="box border-blue" id="blue" role="button" onclick="chooseLifeOrDeathBox(this.id)">
-      <p>Blue</p>
+    <div class="box border-blue" id="music" role="button" onclick="chooseLifeOrDeathBox(this.id)">
+      <p>🎶</p>
     </div>
-    <div class="box border-yellow" id="yellow" role="button" onclick="chooseLifeOrDeathBox(this.id)">
-      <p>Yellow</p>
+    <div class="box border-yellow" id="star" role="button" onclick="chooseLifeOrDeathBox(this.id)">
+      <p>🌟</p>
     </div>
   </div>
   <div class="game4-color-info">
-    <p><strong>🟥 Red: </strong>Both the number of password characters and the math solution are even</p>
-    <p><strong>🟩 Green: </strong>Only the number of password characters is odd</p>
-    <p><strong>🟦 Blue: </strong>Only the math solution is odd</p>
-    <p><strong>🟨 Yellow: </strong>None of the two is even</p>
+    <p>❤️ - Both the number of password characters and the math solution are even</p>
+    <p>🌱 - Only the number of password characters is odd</p>
+    <p>🎶 - Only the math solution is odd</p>
+    <p>🌟 - None of the two is even</p>
   </div>
 </div>
 
 <!-- Final Screen -->
 <div class="container" id="final">
-  <h1 class="text-center">🎉 Happy Birthday! 🎉</h1>
-  <p class="text-center">Wishing you all the best on your special day! 🎂</p>
-  <p class="text-center">And don't forget, you are always my best bro in the world! 🌞</p>
+  <h1 class="text-center">🎉 Happy Birthday Phong! 🎉</h1>
+  <p class="text-center">Wishing you a new year filled with <span><strong id="game1-solution"></strong></span>!</p>
+  <p class="text-center">Wishing you <span><strong id="game2-solution"></strong></span> magical adventure that fills your heart!</p>
+  <p class="text-center">Wishing you <span><strong id="game3-solution"></strong></span> reasons to smile every single day!</p>
+  <p class="text-center">And celebrate today with <span><strong id="game4-solution"></strong></span>!</p>
 </div>
 
 <!-- The hidden word -->

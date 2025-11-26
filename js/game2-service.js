@@ -10,6 +10,8 @@ export function initGame2() {
   window.showSecondHintGame2 = toggleSecondHint;
 }
 
+export const solutionGame2 = '1';
+
 function chooseBox(id) {
   if (id === '1') {
     showNotification(NotificationType.SUCCESS, 'Easy, right? 😏');
@@ -19,10 +21,10 @@ function chooseBox(id) {
   } else if (id === '27') {
     document.getElementById('mystery-word').textContent = 'number one';
   } else {
-    showNotification(NotificationType.ERROR, 'Wrong number! You must start again from the beginning 🔙');
+    showNotification(NotificationType.ERROR, 'Wrong number! Going back to the beginning... 🔙');
     setTimeout(() => {
       location.reload();
-    }, 3000);
+    }, 2500);
   }
 }
 

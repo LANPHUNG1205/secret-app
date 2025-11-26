@@ -3,7 +3,7 @@ import { game1, game2 } from "./main.js";
 import { showNotification } from "./notification-service.js";
 import {NotificationType} from "./model/notification-type.js";
 
-export let hiddenWord = "";
+export let solutionGame1 = "";
 
 export async function initGame1() {
   await loadRandomWord();
@@ -16,10 +16,10 @@ async function loadRandomWord() {
   const response = await fetch("data/hidden-words.json");
   const words = await response.json();
 
-  hiddenWord = words[Math.floor(Math.random() * words.length)];
+  solutionGame1 = words[Math.floor(Math.random() * words.length)];
 
   const el = document.querySelector(".hidden-word");
-  el.textContent = hiddenWord.toUpperCase();
+  el.textContent = solutionGame1.toUpperCase();
 
   const pos = [
     { x: 8, y: 20 },
@@ -39,7 +39,7 @@ function checkPassword() {
   const input = document.getElementById("game1-answer-field");
   const answer = input.value.toLowerCase();
 
-  if (answer === hiddenWord) {
+  if (answer === solutionGame1) {
     showNotification(NotificationType.SUCCESS, 'Logged in successfully! 😎');
     hide(game1);
     show(game2);

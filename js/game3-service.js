@@ -69,8 +69,9 @@ function startTimer(count) {
 
     if (count < 0) {
       clearInterval(intervalId);
-      document.getElementById("game3-check-button").disabled = true;
+      document.querySelectorAll('button').forEach(btn => btn.disabled = true);
       showNotification(NotificationType.ERROR, 'Time out! ⏰ You will be logged out in seconds...');
+      document.getElementById("game3-check-button").disabled = true;
       setTimeout(() => {
         location.reload();
       }, 2500);

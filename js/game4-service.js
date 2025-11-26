@@ -38,6 +38,10 @@ function chooseLifeOrDeathBox(id) {
     startConfetti();
   } else {
     showNotification(NotificationType.ERROR, 'Wrong! Restarting... ↩️');
+    document.querySelectorAll('.box').forEach(box => {
+      box.removeAttribute('onclick');
+      box.classList.add('disabled');
+    });
     setTimeout(() => {
       location.reload();
     }, 2500);

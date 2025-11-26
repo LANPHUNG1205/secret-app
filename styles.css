@@ -156,6 +156,19 @@ input {
   background: #f0f0f0;
 }
 
+.box.disabled,
+.box.disabled:hover,
+.box.disabled:active {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  border: 1px solid #c0c0c0;
+  cursor: default;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+  opacity: 1;
+}
+
 .border-red {
   border: 2px solid #F02323;
 }

@@ -2,17 +2,17 @@
 
 ## Git
 
-Git is required so that you can clone (make a copy version of) the code file from Github to your computer.
+Git is required so that you can clone (make a copy version of) the code file from Github to your computer (and also later make changes to the code if you want)
 
 Go to this website [Git](https://git-scm.com/install/windows) and download the latest version.
 
-After installing git successfully, you can check by open the Terminal and write the command to check the git version:
+After installing git successfully, you can check by open Terminal and write the command to check the git version:
 
 ```
 git --version
 ```
 
-If the terminal shows the current version of git, then you're done!
+If the Terminal shows the current version of git, then you're done!
 
 ## Node.js
 
@@ -20,7 +20,7 @@ Node.js is required so that you can run the web app in browser (Google Chrome, F
 
 Go the this website [Node.js](https://nodejs.org/en/download) and download the LTS (Long-Term Support) version.
 
-After installing git successfully, you can check by opening the Terminal and write the command to check the node and npm version:
+After installing Node.js successfully, you can check by using Terminal and write the command to check the node and npm version:
 
 ```
 node -v
@@ -60,7 +60,7 @@ Write the following command then Enter:
 npx http-server
 ```
 
-You will see different URLs starting with 'http://' at the end. 
+After a few seconds you will see different URLs starting with 'http://'.
 
 Ctrl + Click on one of the URL will open the Web App directly on your browser (or just simply copy the URL and paste it on your browser)
 

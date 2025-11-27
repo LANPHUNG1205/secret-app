@@ -1,3 +1,7 @@
+# Overview
+
+This is a mini secret web application just using plain HTML, CSS and Javascript. In order to try out the app, you can follow the instruction here! Good luck!
+
 # Installation
 
 ## Git
